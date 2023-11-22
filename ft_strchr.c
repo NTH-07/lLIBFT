@@ -21,8 +21,6 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	if (u == '\0')
 		return ((char *)(s + ft_strlen(s)));
-	if (!s)
-		return (NULL);
 	while (s[i])
 	{
 		if (s[i] == u)
