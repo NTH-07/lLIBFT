@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nalabdal <nalabdal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:03:26 by nalabdal          #+#    #+#             */
-/*   Updated: 2023/11/19 19:07:38 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/23 20:21:50 by nalabdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*t;
 
-	if (!nmemb && !size && nmemb >= __SIZE_MAX__ / size)
+	if (nmemb == 0 || size == 0)
+		return (ft_calloc(1, 1));
+	if ((size * nmemb) / size != nmemb)
 		return (NULL);
 	t = (void *)malloc(nmemb * size);
 	if (!t)

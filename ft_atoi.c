@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nalabdal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nalabdal <nalabdal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:57:56 by nalabdal          #+#    #+#             */
-/*   Updated: 2023/11/04 18:06:29 by nalabdal         ###   ########.fr       */
+/*   Updated: 2023/11/23 20:27:32 by nalabdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		c = nptr[i] - 48;
+		if (i > 18 && sign < 0)
+			return (0);
 		x = x * 10 + c;
 		i++;
 	}
