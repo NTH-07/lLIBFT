@@ -6,16 +6,25 @@
 /*   By: nalabdal <nalabdal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:57:56 by nalabdal          #+#    #+#             */
-/*   Updated: 2023/11/23 20:27:32 by nalabdal         ###   ########.fr       */
+/*   Updated: 2023/11/24 20:29:04 by nalabdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_check(int i, int sign)
+{
+	if (i > 18 && sign < 0)
+		return (0);
+	else if (i > 18 && sign > 0)
+		return (-1);
+	else
+		return (1);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	int				sign;
-	int				c;
 	size_t			i;
 	unsigned long	x;
 
@@ -34,10 +43,9 @@ int	ft_atoi(const char *nptr)
 		return (0);
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		c = nptr[i] - 48;
-		if (i > 18 && sign < 0)
-			return (0);
-		x = x * 10 + c;
+		if (ft_check(i, sign) <= 0)
+			return (ft_check(i, sign));
+		x = x * 10 + (nptr[i] - 48);
 		i++;
 	}
 	return (x * sign);
