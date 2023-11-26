@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nalabdal <nalabdal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:37:53 by nalabdal          #+#    #+#             */
-/*   Updated: 2023/11/16 01:03:59 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2023/11/26 15:19:36 by nalabdal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int main()
-// {
-// 	printf("%s\n", ft_strnstr("lolnouhazwina", "nouha", 14));
-// 	return (0);
-// }
